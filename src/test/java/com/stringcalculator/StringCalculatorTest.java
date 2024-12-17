@@ -35,4 +35,13 @@ public class StringCalculatorTest {
         int expected = 43;
         Assert.assertEquals(expected, actual);
     }
+
+    // string with n no also having new line test
+    @Test
+    public void addNNumbersWithNewLineTest() {
+        // "1\n2,3" should return 6
+        int actual = StringCalculator.add("1\n2,3");
+        int expected = 6;
+        Assert.assertEquals(expected, actual);
+    }
 }
