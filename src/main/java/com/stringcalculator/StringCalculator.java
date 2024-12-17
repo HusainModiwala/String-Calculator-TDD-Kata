@@ -11,17 +11,6 @@ public class StringCalculator {
             String trimmedNumber = num.trim();
             if(!trimmedNumber.isEmpty()) {
                 try{
-                    System.out.println(num);
-                    //commented for testing new cleaner logic, not removing since may be needed again
-                    //String[] splitNewLine = trimmedNumber.split("\n");
-//                    int tempSum = 0;
-//                    for (String t : splitNewLine) {
-//                        String trimNumber = t.trim();
-//                        if (!trimNumber.isEmpty()) {
-//                            tempSum += Integer.parseInt(trimNumber);
-//                        }
-//                    }
-//                    if(tempSum > 0)sum+=tempSum;
                     sum += Long.parseLong(num);
                 } catch (Exception e){
                     throw new IllegalArgumentException("Invalid number format: " + trimmedNumber);
