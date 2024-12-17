@@ -2,7 +2,7 @@ package com.stringcalculator;
 
 
 public class DelimiterAndInputParser {
-    public static String[] parseDelimiter(String input) throws Exception {
+    public static String[] parseDelimiter(String input) throws IllegalArgumentException {
         input = input.trim();
         if(input.isEmpty())return new String[]{",", ""};
 

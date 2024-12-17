@@ -1,6 +1,5 @@
 package com.stringcalculator;
 
-import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
