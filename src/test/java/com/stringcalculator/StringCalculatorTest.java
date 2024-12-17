@@ -28,7 +28,7 @@ public class StringCalculatorTest {
         Assert.assertEquals(expected, actual);
     }
 
-    // string with n no test
+    // string with n no's test
     @Test
     public void addNNumbersTest() {
         int actual = StringCalculator.add("2,3,5,3,2,6,8,9,5");
@@ -36,7 +36,7 @@ public class StringCalculatorTest {
         Assert.assertEquals(expected, actual);
     }
 
-    // string with n no also having new line test
+    // string with n no's also having new line test
     @Test
     public void addNNumbersWithNewLineTest() {
         // "1\n2,3" should return 6
@@ -45,11 +45,20 @@ public class StringCalculatorTest {
         Assert.assertEquals(expected, actual);
     }
 
-    // string with n no also having new line, and may have custom delimiter test
+    // string with n no's also having new line, and may have custom delimiter test
     @Test
     public void addNNumbersWithNewLineAndCustomDelimiterTest() {
         // "//;\n1;2" should return 3
         int actual = StringCalculator.add("//;\n1;2");
+        int expected = 3;
+        Assert.assertEquals(expected, actual);
+    }
+
+    // string with n no's also having n new line, and may have custom delimiter (multiple) test
+    @Test
+    public void addNNumbersWithNNewLineAndCustomDelimiterTest() {
+        // "//;\n1;2" should return 3
+        int actual = StringCalculator.add("//;\n 1 \n ; \n ; ; 2 \n ");
         int expected = 3;
         Assert.assertEquals(expected, actual);
     }
