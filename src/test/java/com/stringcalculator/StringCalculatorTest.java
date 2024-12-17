@@ -54,12 +54,40 @@ public class StringCalculatorTest {
         Assert.assertEquals(expected, actual);
     }
 
-    // string with n no's also having n new line, and may have custom delimiter (multiple) test
+    // string with n no's also having n new lines, and may have custom delimiter (multiple times) test
     @Test
     public void addNNumbersWithNNewLineAndCustomDelimiterTest() {
-        // "//;\n1;2" should return 3
         int actual = StringCalculator.add("//;\n 1 \n ; \n ; ; 2 \n ");
         int expected = 3;
+        Assert.assertEquals(expected, actual);
+    }
+
+    // add with a negative number will throw an exception “negatives not allowed” - and the negative's that were passed.
+    @Test
+    public void addNNumbersWithNegativesTest() {
+        Exception exception = Assert.assertThrows(IllegalArgumentException.class, () -> {
+            StringCalculator.add("//; \n2;-3 ;-2;1000 ");
+        });
+
+        String expectedMessage = "negatives not allowed: -3, -2";
+        String actualMessage = exception.getMessage();
+        Assert.assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+    // numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
+    @Test
+    public void addNNumbersWithSumLessThanThousandTest() {
+        int actual = StringCalculator.add("//; \n2;3;2;1000 ");
+        int expected = 7;
+        Assert.assertEquals(expected, actual);
+    }
+
+    /* string with n no's also having n new lines, and may have custom delimiter with multiple chars also
+     occurring more than once test */
+    @Test
+    public void addNNumbersWithNNewLineAndNCustomDelimiterTest() {
+        int actual = StringCalculator.add("//;&,\n 1;&, \n ;&, \n  ;&, 2  ;&, 8 \n ");
+        int expected = 11;
         Assert.assertEquals(expected, actual);
     }
 }
