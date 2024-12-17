@@ -44,4 +44,13 @@ public class StringCalculatorTest {
         int expected = 6;
         Assert.assertEquals(expected, actual);
     }
+
+    // string with n no also having new line, and may have custom delimiter test
+    @Test
+    public void addNNumbersWithNewLineAndCustomDelimiterTest() {
+        // "//;\n1;2" should return 3
+        int actual = StringCalculator.add("//;\n1;2");
+        int expected = 3;
+        Assert.assertEquals(expected, actual);
+    }
 }
