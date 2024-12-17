@@ -65,9 +65,7 @@ public class StringCalculatorTest {
     // add with a negative number will throw an exception “negatives not allowed” - and the negative's that were passed.
     @Test
     public void addNNumbersWithNegativesTest() {
-        Exception exception = Assert.assertThrows(IllegalArgumentException.class, () -> {
-            StringCalculator.add("//; \n2;-3 ;-2;1000 ");
-        });
+        Exception exception = Assert.assertThrows(IllegalArgumentException.class, () -> StringCalculator.add("//; \n2;-3 ;-2;1000 "));
 
         String expectedMessage = "negatives not allowed: -3, -2";
         String actualMessage = exception.getMessage();
